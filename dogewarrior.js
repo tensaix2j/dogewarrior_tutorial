@@ -14,8 +14,8 @@ function DogeWarrior() {
 		
 		this.canvas = document.getElementById("cv");
 		this.canvas.style.backgroundColor = "#777777";
-		this.canvas.width  = 1200 ;
-	    this.canvas.height = 800 ;
+		this.canvas.width  = 800 ;
+	    this.canvas.height = 600 ;
 	    this.ctxt = this.canvas.getContext('2d');
 		this.resource_loaded = 0;
 		this.total_resource = 2;
