@@ -165,7 +165,7 @@ function DogeWarrior() {
 
 
 
-	this.player_update_frame = function() {
+	this.update_player_animation = function() {
 		
 		// Walking frames
 		if ( this.player.walking > 0 ) {
@@ -269,7 +269,7 @@ function DogeWarrior() {
 
 
 	//-----------
-	this.player_update_action = function() {
+	this.update_player_action = function() {
 
 		if ( this.player.falling > 0 ) {
 			
@@ -285,8 +285,9 @@ function DogeWarrior() {
 
 
 		if ( this.player.control_direction[1] == 1 ) {
-			// Initiate jumps
 			if ( this.player.falling == 0 ) {
+				
+				// Initiate velocity
 				this.player.fallingspeed = -1.0 * this.setting_jump_height ;
 				this.player.falling 	= 1;
 				this.player.tick 		= 0;
@@ -323,8 +324,8 @@ function DogeWarrior() {
 
 	this.on_update = function() {
 
-		this.player_update_action();
-		this.player_update_frame();
+		this.update_player_action();
+		this.update_player_animation();
 		
 	}
 
