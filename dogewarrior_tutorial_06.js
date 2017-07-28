@@ -365,6 +365,9 @@ function DogeWarrior() {
 			}
 		}
 
+		this.camera.x = this.player.x - this.canvas.width / 2 ;
+		this.camera.y = this.player.y - this.canvas.height / 2;
+			
 	}
 
 
@@ -622,9 +625,17 @@ function DogeWarrior() {
 
 
 	this.update_camera_position = function() {
-		this.camera.x = this.player.x - this.canvas.width / 2 ;
-		this.camera.y = this.player.y - this.canvas.height / 2;
+		
+		//this.camera.x = this.player.x - this.canvas.width / 2 ;
+		//this.camera.y = this.player.y - this.canvas.height / 2;
 
+		
+		var camera_target_x = this.player.x - this.canvas.width / 2  ;
+		this.camera.x += (( camera_target_x - this.camera.x ) / 10 >> 0 );
+
+		var camera_target_y = this.player.y - this.canvas.height / 2 ;
+		this.camera.y +=  (( camera_target_y - this.camera.y ) / 10 >> 0 ); 
+				
 	}
 
 
